@@ -1,0 +1,63 @@
+version: '1.0'
+
+services:
+  nest:
+    container_name: nest 
+    build: ./backend/nest
+    env_file:
+      - .env
+    ports:
+      - "$NEST_PORT:$NEST_PORT"
+    volumes:
+      - "$VOLUMEPATH/nest:/var/backend"
+    networks:
+      - intra
+    depends_on:
+      - redis
+      - postgres
+
+  # this is not a database
+  # this is in-memory message broker
+  redis:
+    container_name: redis
+    image: redis:7.0-alpine
+    networks:
+      - intra
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: "$POSTGRES_USER"
+      POSTGRES_PASSWORD: "$POSTGRES_PASSWORD"
+      TZ: "Asia/Seoul"
+    volumes:
+      - "$VOLUMEPATH/postgres:/var/lib/postgresql/data"
+    networks:
+      - intra
+
+  #postgresql GUI 관리 이미지
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    ports:
+      - "5555:80" #http://localhost:5555
+    volumes:
+      - "$VOLUMEPATH/pgadmin:/var/lib/pgadmin"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "$PGADMIN_DEFAULT_EMAIL"
+      PGADMIN_DEFAULT_PASSWORD: "$PGADMIN_DEFAULT_PASSWORD"
+      TZ: "Asia/Seoul"
+    depends_on:
+      - postgres
+
+  react:
+    container_name: react
+    build: ./frontend/
+    ports:
+      - "$REACT_PORT:$REACT_PORT"
+    networks:
+      - intra
+
+networks:
+  intra:
