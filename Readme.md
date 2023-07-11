@@ -27,6 +27,10 @@ POSTGRES_USER=pingpongdang
 PGADMIN_DEFAULT_EMAIL=ping@42seoul.kr
 PGADMIN_DEFAULT_PASSWORD=0000
 
-NEST_PORT=8080
-REACT_PORT=3000
+NEST_PORT=10002
+REACT_PORT=10003
 ```
+
+# ERR
+
+- PORT는 macOS기준 7000, 5000등 특정 포트는 이미 OS에서 사용중이므로, 사용하실 PORT가 이미 bind되었다는 오류 발생 시, `lsof -i:10002`등으로 다른 프로세스가 사용중인지 확인하고 수정하시면됩니다.
