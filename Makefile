@@ -4,13 +4,12 @@ all: back front
 front:
 	@echo "Starting front-end..."
 	./tools/init.sh
-	docker-compose up react
-
+	docker-compose up --build react 
 
 back:
 	@echo "Starting back-end..."
 	./tools/init.sh
-	docker-compose up redis postgres nest pgadmin 
+	docker-compose up --build redis postgres nest pgadmin 
 
 down:
 	@echo "Stopping containers..."
