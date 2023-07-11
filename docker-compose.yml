@@ -3,7 +3,7 @@ version: '1.0'
 services:
   nest:
     container_name: nest 
-    build: ./backend/nest
+    build: ./backend
     env_file:
       - .env
     ports:
@@ -53,7 +53,7 @@ services:
 
   react:
     container_name: react
-    build: ./frontend/
+    build: ./frontend
     ports:
       - "$REACT_PORT:$REACT_PORT"
     networks:
