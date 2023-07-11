@@ -4,7 +4,7 @@ all: back front
 front:
 	@echo "Starting front-end..."
 	./tools/init.sh
-	docker-compose up react --build -d
+	docker-compose up react
 
 
 back:
