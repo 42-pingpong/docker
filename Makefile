@@ -10,7 +10,7 @@ front:
 back:
 	@echo "Starting back-end..."
 	./tools/init.sh
-	docker-compose up redis postgres nest pgadmin --build 
+	docker-compose up redis postgres nest pgadmin 
 
 down:
 	@echo "Stopping containers..."
