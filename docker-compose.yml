@@ -9,7 +9,7 @@ services:
     ports:
       - "$NEST_PORT:$NEST_PORT"
     volumes:
-      - "$VOLUMEPATH/nest:/var/backend"
+      - "$VOLUMEPATH/backend:/var/backend"
     networks:
       - intra
     depends_on:
@@ -55,6 +55,10 @@ services:
   react:
     container_name: react
     build: ./frontend
+    env_file:
+      - .env
+    volumes:
+      - "$VOLUMEPATH/frontend:/var/frontend"
     ports:
       - "$REACT_PORT:$REACT_PORT"
     networks:
