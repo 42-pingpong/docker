@@ -20,8 +20,10 @@ VOLUMEPATH=마운트하고자하는 호스트 컴퓨터 경로
 VOLUMEPATH=/Users/myukang/goinfre/data
 
 # Database env
+POSTGRES_DBHOST=postgres
 POSTGRES_PASSWORD=0000
 POSTGRES_USER=pingpongdang
+POSTGRES_DB=pingpong
 
 # PGADMIN
 PGADMIN_DEFAULT_EMAIL=ping@42seoul.kr
