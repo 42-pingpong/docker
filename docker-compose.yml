@@ -60,7 +60,7 @@ services:
     volumes:
       - "$VOLUMEPATH/frontend:/var/frontend"
     ports:
-      - "$REACT_PORT:$REACT_PORT"
+      - "$REACT_PORT:3000"
     networks:
       - intra
 
