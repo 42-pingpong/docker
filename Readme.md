@@ -18,7 +18,7 @@ VOLUMEPATH=마운트하고자하는 호스트 컴퓨터 경로
 
 ```sh
 VOLUMEPATH=/Users/myukang/goinfre/data
-
+42APIKEY=
 COOKIE_SECRET=secret
 
 # Database env
