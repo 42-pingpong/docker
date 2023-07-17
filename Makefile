@@ -15,6 +15,14 @@ down:
 	@echo "Stopping containers..."
 	docker-compose down
 
+resfront:
+	@echo "Restarting front-end..."
+	docker-compose restart react
+
+resback:
+	@echo "Restarting back-end..."
+	docker-compose restart nest
+
 clean:
 	@echo "Cleaning containers..."
 	docker-compose down -v
