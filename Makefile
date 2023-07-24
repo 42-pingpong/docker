@@ -1,5 +1,8 @@
 #Makefile
-all: back front
+all:
+	@echo "Stating full testing env"
+	./tools/init.sh
+	docker-compose up --build redis postgres nest pgadmin react
 
 front:
 	@echo "Starting front-end..."
