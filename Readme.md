@@ -25,10 +25,18 @@ VOLUMEPATH=마운트하고자하는 호스트 컴퓨터 경로
 ```sh
 VOLUMEPATH=/Users/myukang/goinfre/data
 42APIKEY=
-COOKIE_SECRET=secret
+REDIRECT42=
+CLIENT42=
+
+#JWT
+
+JWT_ACCESS_SECRET=secret
+JWT_REFRESH_SECRET=secret2
+
 
 # Database env
 POSTGRES_DBHOST=postgres
+POSTGRES_DBPORT=5432
 POSTGRES_PASSWORD=0000
 POSTGRES_USER=pingpongdang
 POSTGRES_DB=pingpong
