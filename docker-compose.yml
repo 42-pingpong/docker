@@ -21,6 +21,8 @@ services:
   redis:
     container_name: mb
     image: redis:7.0-alpine
+    ports:
+      - "6379:6379" 
     networks:
       - intra
 
@@ -65,7 +67,7 @@ services:
     volumes:
       - "$VOLUMEPATH/frontend:/var/frontend"
     ports:
-      - "$REACT_PORT:3000"
+      - "$REACT_PORT:10003"
     networks:
       - intra
 
