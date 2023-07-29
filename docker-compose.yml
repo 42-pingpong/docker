@@ -41,24 +41,6 @@ services:
     networks:
       - intra
 
-  #postgresql GUI 관리 이미지
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    ports:
-      - "5555:80" #http://localhost:5555
-    volumes:
-      - "$VOLUMEPATH/pgadmin:/var/lib/pgadmin"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "$PGADMIN_DEFAULT_EMAIL"
-      PGADMIN_DEFAULT_PASSWORD: "$PGADMIN_DEFAULT_PASSWORD"
-      PGADMIN_CONFIG_WTF_CSRF_CHECK_DEFAULT: "False"
-      TZ: "Asia/Seoul"
-    depends_on:
-      - postgres
-    networks:
-      - intra
-
   react:
     container_name: react
     build: ./frontend

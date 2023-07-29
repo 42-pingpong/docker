@@ -2,7 +2,7 @@
 all:
 	@echo "Stating full testing env"
 	./tools/init.sh
-	docker-compose up --build redis postgres nest pgadmin react
+	docker-compose up --build redis postgres nest react
 
 front:
 	@echo "Starting front-end..."
@@ -12,7 +12,7 @@ front:
 back:
 	@echo "Starting back-end..."
 	./tools/init.sh
-	docker-compose up --build redis postgres nest pgadmin 
+	docker-compose up --build redis postgres nest 
 
 down:
 	@echo "Stopping containers..."
