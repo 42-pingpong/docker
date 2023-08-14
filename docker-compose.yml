@@ -35,7 +35,8 @@ services:
       POSTGRES_USER: "$POSTGRES_USER"
       POSTGRES_PASSWORD: "$POSTGRES_PASSWORD"
       POSTGRES_DB: "$POSTGRES_DB"
-      TZ: "Asia/Seoul"
+      TZ: "GMT+9"
+      PGTZ: "GMT+9"
     volumes:
       - "$VOLUMEPATH/postgres:/var/lib/postgresql/data"
     networks:
